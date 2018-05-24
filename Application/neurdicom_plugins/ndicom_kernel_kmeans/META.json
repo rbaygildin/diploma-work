@@ -1,0 +1,78 @@
+{
+  "author": "Roman Baigildin",
+  "name": "kernel_kmeans",
+  "version": "1.0",
+  "display_name": "Kernel KMeans Segmentation",
+  "modalities": [
+    "MR",
+    "CT"
+  ],
+  "params": {
+    "n_clusters": {
+      "type": "int",
+      "is_required": false,
+      "default": 3,
+      "display_name": "Number of clusters",
+      "hint": "Number of clusters"
+    },
+    "kernel": {
+      "type": "string",
+      "is_required": false,
+      "default": "cos",
+      "display_name": "Kernel",
+      "values": {
+        "cos": "Cosinus",
+        "gauss": "Gauss",
+        "triangular": "Triangular",
+        "epanechnikov": "Epanechnikov"
+      },
+      "hint": "Kernel"
+    },
+    "numpass": {
+      "type": "int",
+      "is_required": false,
+      "default": 10,
+      "display_name": "Number of pass",
+      "hint": "Number of skull stripping passes"
+    },
+    "median_radius": {
+      "type": "int",
+      "is_required": false,
+      "default": 5,
+      "display_name": "Median radius",
+      "hint": "Median radius of skull stripping"
+    },
+    "high_intensity_threshold": {
+      "type": "float",
+      "is_required": false,
+      "default": 0.1,
+      "display_name": "High intensity threshold",
+      "hint": "High intensity threshold"
+    },
+    "blur_radius": {
+      "type": "int",
+      "is_required": false,
+      "default": 5,
+      "display_name": "Blur radius",
+      "hint": "Blur radius"
+    },
+    "dilation_radius": {
+      "type": "int",
+      "is_required": false,
+      "default": 5,
+      "display_name": "Dilation radius",
+      "hint": "Dilation radius"
+    },
+    "dilation_iterations": {
+      "type": "int",
+      "is_required": false,
+      "default": 1,
+      "display_name": "Dilation iterations",
+      "hint": "Dilation iterations"
+    }
+  },
+  "type": "SEGMENT",
+  "result": {
+    "type": "IMAGE"
+  }
+}
